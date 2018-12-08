@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Random liines of code from the internet
-RUN sudo apt-get install python3-dev
+RUN apt-get install python3-dev
 
 # Install any needed packages specified in requirements.txt
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt

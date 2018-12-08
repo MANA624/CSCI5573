@@ -1,4 +1,5 @@
 Flask
 Redis
 requests
-numpy
+docker
+psutils

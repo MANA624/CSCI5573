@@ -8,8 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Random liines of code from the internet
-RUN apt-get add --no-cache python3 && python3 -m ensurepip && rm -r /usr/lib/python*/ensurepip && pip3 install --upgrade pip setuptools && rm -r /root/.cache
-RUN apt-get add --update build-base vim curl bash zip git linux-headers python3-dev py-psutil && rm -rf /var/cache/apk/*
+RUN sudo apt-get install python3-dev
 
 # Install any needed packages specified in requirements.txt
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt

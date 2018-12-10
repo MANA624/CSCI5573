@@ -8,10 +8,7 @@ machines = ["http://73.169.9.236:4000",
 
 
 def send_source(machine_addr):
-    filename = "test_program.py"
-    with open(filename, 'r') as reader:
-        source = reader.read()
-    r = requests.post(machine_addr, data={"source": source, "seed": randint(0, 1000)})
+    r = requests.post(machine_addr, data={"seed": randint(0, 1000)})
     return r
 
 

@@ -1,15 +1,18 @@
 import requests
 import json
+from random import randint
 
 machines = ["http://0.0.0.0:4000",
             "http://0.0.0.0:5000"]
+
 
 def send_source(machine_addr):
     filename = "test_program.py"
     with open(filename, 'r') as reader:
         source = reader.read()
-    r = requests.post(machine_addr, data={"source": source})
+    r = requests.post(machine_addr, data={"source": source, "seed": randint(0, 1000)})
     return r
+
 
 # Requests a heartbeat status from all known servers and returns a dictionary
 # mapping machine addresses to their heartbeat struct

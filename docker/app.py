@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import os
 import socket
 import requests
-import numpy
 import heartbeat
 
 app = Flask(__name__)
@@ -31,4 +30,5 @@ def heart():
     return jsonify(results)
 
 if __name__ == "__main__":
+    print(heartbeat.collect_heartbeat())
     app.run(host='0.0.0.0', port=4000)

@@ -9,10 +9,8 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends gcc \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip3 install --trusted-host pypi.python.org -r requirements.txt \
-    && apt-get purge -y --auto-remove gcc
+    && apt-get install -y gcc \
+    && pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
